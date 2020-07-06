@@ -1,0 +1,23 @@
+{
+  "name": "gittest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "brlTest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredWu0805/gitTest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaredWu0805/gitTest/issues"
+  },
+  "homepage": "https://github.com/jaredWu0805/gitTest#readme",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
