@@ -1,0 +1,10 @@
+html {
+    font-family: 'Questrial', serif;
+}
+
+body {
+    font-size: 18px;
+}
+
+@media(max-width: 780px){
+}
