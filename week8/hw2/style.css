@@ -8,18 +8,67 @@ body {
 }
 
 nav {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    margin: 0 auto;
     max-width: 1920px;
     font-size: 22px;
+    padding: 0px 30px;
 }
 
 ul {
     list-style-type: none;
     display: inline-flex;
+    margin: 0px;
 }
 
+li {
+    padding: 10px 30px;
+    transition: 0.5s;
+}
+
+li:hover {
+    background-color: red;
+}
+
+.wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: silver;
+
+}
+
+.streams__section {
+    border: 1px solid gold;
+}
+
+.game__title {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.stream__contents {
+    margin: 0 auto;
+    padding: 20px 10px;
+    width: 70%;
+    max-width: 1920px;
+    border: 1px solid red;
+}
+
+.demo {
+    display: inline-block;
+    width: 300px;
+    height: 250px;
+    border: 1px solid green;
+    margin: 10px 5px;
+}
+
+.stream__preview {
+    width: 300px;
+    height: 200px;
+    background-color: white;
+}
 @media(max-width: 780px){
 }

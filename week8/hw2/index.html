@@ -21,13 +21,91 @@
     </ul>
 </nav>
 <div class="wrapper">
-    <section class="streams__content">
+    <section class="streams__section">
         <div class="game__title">This is the game title</div>
         <div class="page__desc">Top 20 popular live streams sorted by current viewers</div>
-        <div></div>
+        <div class="stream__contents">
+
+        </div>
     </section>
 </div>
 <script>
+    let gamesArr;
+
+    let req = new XMLHttpRequest();
+    req.open('GET', 'https://api.twitch.tv/kraken/games/top?limit=5',true);
+    req.setRequestHeader('Client-ID', 'x14has4vzwes16ijg7e05j9xz8rcwp');
+    req.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json');
+    req.send();
+
+    let gameReq = new XMLHttpRequest();
+
+    req.onload = function() {
+        if ( req.status >= 200 && req.status < 400) {
+            const json = JSON.parse(req.responseText);
+            gamesArr = json.top;
+            console.log(gamesArr);
+            gamesArr.forEach( element => {
+                console.log(element['game'].name);
+                gameReq.open('GET', `https://api.twitch.tv/kraken/streams/?game=${element['game'].name}&limit=20`, false);
+                gameReq.setRequestHeader('Client-ID', 'x14has4vzwes16ijg7e05j9xz8rcwp');
+                gameReq.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json');
+                gameReq.send();
+            });
+        } else {
+            console.log('err');
+        }
+    };
+
+    req.onerror = function() {
+        console.log('error');
+    };
+
+    gameReq.onload = function() {
+        if ( gameReq.status >= 200 && gameReq.status < 400) {
+            const channels = JSON.parse(gameReq.responseText);
+            console.log(channels.streams[0].preview.template);
+            const contents = document.querySelector('.stream__contents');
+            let div = document.createElement('div');
+            div.classList.add('demo');
+            div.innerHTML = `
+                <div class="stream__preview"><img src="${channels.streams[0].preview.template}"></div>
+                <div class="stream__brief"></div>
+            `;
+            contents.appendChild(div);
+        } else {
+            console.log('gameReq err');
+        }
+    }
+
+       gameReq.onerror = function() {
+        console.log('gameReq error');
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 </body>
 </html>
