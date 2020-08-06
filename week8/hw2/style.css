@@ -4,6 +4,21 @@ html {
 
 body {
     font-size: 18px;
+    text-align: center;
+}
+
+nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1920px;
+    font-size: 22px;
+}
+
+ul {
+    list-style-type: none;
+    display: inline-flex;
 }
 
 @media(max-width: 780px){
