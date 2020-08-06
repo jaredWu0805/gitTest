@@ -3,8 +3,9 @@ html {
 }
 
 body {
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
+    color: white;
 }
 
 nav {
@@ -14,39 +15,53 @@ nav {
     margin: 0 auto;
     max-width: 1920px;
     font-size: 22px;
-    padding: 0px 30px;
+    background-color: #535353c9;
+}
+
+.page__title {
+    font-weight: bold;
+    padding: 10px 0px 10px 30px;
+}
+
+.page__title:hover {
+    cursor: pointer;
 }
 
 ul {
     list-style-type: none;
     display: inline-flex;
     margin: 0px;
+    font-size: 14px;
 }
 
 li {
-    padding: 10px 30px;
+    padding: 15px 20px;
     transition: 0.5s;
 }
 
 li:hover {
-    background-color: red;
+    cursor: pointer;
+    background-color: #ff962f;
+}
+
+.clicked {
+    background-color: #ff962f;
 }
 
 .wrapper {
     max-width: 1920px;
     margin: 0 auto;
-    background-color: silver;
-
-}
-
-.streams__section {
-    border: 1px solid gold;
+    background-color: white;
+    background-image: url('./bkg.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 1920px;
 }
 
 .game__title {
     font-size: 22px;
     font-weight: bold;
-    margin: 20px;
+    padding: 20px;
 }
 
 .stream__contents {
@@ -54,21 +69,68 @@ li:hover {
     padding: 20px 10px;
     width: 70%;
     max-width: 1920px;
-    border: 1px solid red;
 }
 
-.demo {
+.card {
     display: inline-block;
-    width: 300px;
-    height: 250px;
-    border: 1px solid green;
-    margin: 10px 5px;
+    width: 320px;
+    height: 240px;
+    margin: 12px 15px;
+    box-shadow: 1px 1px 15px grey;
+    transition: 0.125s;
+
 }
 
+.card:hover {
+    transform: scale(1.2);
+}
 .stream__preview {
-    width: 300px;
-    height: 200px;
+    width: 320px;
+    height: 180px;
     background-color: white;
 }
+
+.stream__brief {
+    background-color: #454545;
+    width: 320px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.stream__logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    margin: 0px 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.stream__details {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 10px;
+    width: 230px;
+    height: 60px;
+    justify-content: center;
+    align-items: start;
+}
+
+.stream__status {
+    white-space: nowrap;
+}
+
+.stream__username {
+    font-size: 14px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
 @media(max-width: 780px){
 }
