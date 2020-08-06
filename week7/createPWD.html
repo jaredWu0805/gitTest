@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>密碼產生器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+
+    <style>
+        body: {
+            font-size: 20px;
+        }
+        .app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .checkbox {
+            padding: 50px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="app">
+    <div class="checkbox">
+        <input type="checkbox" id="en" name="en"/><label for="en">English</label>
+        <input type="checkbox" id="num" name="num"/><label for="num">Number</label>
+        <input type="checkbox" id="sp" name="sp"/><label for="sp">Special</label>
+    </div>
+    <div>
+        <button class="btn-generate">Generate</button>
+    </div>
+    <div class="result">
+    </div>
+</div>
+<script>
+    function get (c){
+        return document.querySelector(c);
+    }
+    const app = get('.app');
+    const checkbox = get('.checkbox');
+    const inputEn = get('input[name="en"]');
+
+    app.addEventListener('click', (e) => {
+        console.log('app capture', e.target, e.eventPhase);
+
+    }, true);
+    checkbox.addEventListener('click', (e) => {
+        console.log('checkbox capture', e.target, e.eventPhase);
+
+    }, true);
+    inputEn.addEventListener('click', (e) => {
+        console.log('inputEn capture', e.target, e.eventPhase);
+        alert("check");
+    }, true);
+
+    app.addEventListener('click', (e) => {
+        console.log('app capture', e.target, e.eventPhase);
+
+    }, false);
+    checkbox.addEventListener('click', (e) => {
+        console.log('checkbox capture', e.target, e.eventPhase);
+        e.stopPropagation();
+    }, false);
+    inputEn.addEventListener('click', (e) => {
+        console.log('inputEn capture', e.target, e.eventPhase);
+    }, false);
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
