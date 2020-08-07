@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
     color: white;
 }
@@ -16,6 +16,7 @@ nav {
     max-width: 1920px;
     font-size: 22px;
     background-color: #535353c9;
+    line-height: 1rem;
 }
 
 .page__title {
@@ -29,7 +30,7 @@ nav {
 
 ul {
     list-style-type: none;
-    display: inline-flex;
+    display: table;
     margin: 0px;
     font-size: 14px;
 }
@@ -37,6 +38,8 @@ ul {
 li {
     padding: 15px 20px;
     transition: 0.5s;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 li:hover {
@@ -51,9 +54,9 @@ li:hover {
 .wrapper {
     max-width: 1920px;
     margin: 0 auto;
-    background-color: white;
+    background-color: #11111d;
     background-image: url('./bkg.jpg');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     min-height: 1920px;
 }
@@ -67,7 +70,7 @@ li:hover {
 .stream__contents {
     margin: 0 auto;
     padding: 20px 10px;
-    width: 70%;
+    width: 80%;
     max-width: 1920px;
 }
 
@@ -121,7 +124,11 @@ li:hover {
 }
 
 .stream__status {
+    width: 230px;
+    overflow:hidden;
     white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: start;
 }
 
 .stream__username {
@@ -133,4 +140,40 @@ a:link {
 }
 
 @media(max-width: 780px){
+    nav {
+        display: block;
+    }
+    .page__title {
+        padding: 18px 0px 0px;
+    }
+
+    ul {
+        padding: 0px;
+        margin: 15px auto 0px;
+    }
+
+    li {
+        padding: 5px;
+        align-self: center;
+    }
+
+    .game__title{
+        font-size: 20px;
+        padding: 20px 0px 10px;
+    }
+    .page__desc {
+        padding: 10px;
+    }
+    .stream__contents {
+        padding: 0px;
+        width: auto;
+    }
+
+    .card {
+        transform: scale(0.8);
+        margin: 0px;
+    }
+    .card:hover {
+        transform: none;
+    }
 }

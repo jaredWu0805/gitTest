@@ -41,7 +41,6 @@
         contents.innerHTML = '';
         let gameTitle = document.querySelector('.game__title');
         gameTitle.textContent = streamArr[0].game;
-        console.log(streamArr);
         streamArr.forEach( stream => {
             let imgURL = stream.preview.medium;
             let logo = stream.channel.logo;
@@ -111,56 +110,17 @@
         ul.querySelectorAll('li').forEach( item => {
             item.classList.remove('clicked');
         });
-        e.target.classList.toggle('clicked');
-        const game = e.target.textContent;
-        twitchRequest(gameReq, `https://api.twitch.tv/kraken/streams/?game=${game}&limit=20`, true);
-
+        if (!e.target.classList.contains('top__games')) {
+            e.target.classList.toggle('clicked');
+            const game = e.target.textContent;
+            twitchRequest(gameReq, `https://api.twitch.tv/kraken/streams/?game=${game}&limit=20`, true);
+        }
     });
 
-    // reset page
+    // reload page
     document.querySelector('.page__title').addEventListener('click', function(e) {
         location.reload();
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </script>
