@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content = "width=device-width, initial-scale=1" />
+	<title>Fetch</title>
+</head>
+<body>
+	<script>
+		
+
+		fetch("https://run.mocky.io/v3/9ffa7514-7ba9-4c6b-a54f-c5c25c6cf54e")
+		  .then(res => {
+			return res.json();
+		}).then(json => {
+			if(json.success){
+				console.log(json);
+				console.log(json.success);
+			}
+		}
+		).catch(err => {
+			console.log('error', err);
+		});
+
+	</script>
+</body>
+</html>
